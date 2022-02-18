@@ -7,6 +7,7 @@ const jwt =require('jsonwebtoken')
 const fetchuser =require('../middleware/fetchUser')
 const JWT_Tok= 'Ccar$321'
 
+// ---------------------------------------------------------------------------------------------
 
 //ROUTE 1: Create user using: POST /api/auth/createuser. No login required, no authentication
 router.post(
@@ -54,6 +55,8 @@ router.post(
   
 );
 
+// ---------------------------------------------------------------------------------------------
+
 // ROUTE 2: Authentication of a user:  POST /api/auth/login
 
 
@@ -96,6 +99,7 @@ router.post(
       }
   });
 
+// ---------------------------------------------------------------------------------------------
 
   // ROUTE 3: Get logged in user detail:  POST /api/auth/getuser . Login required
   router.post(
@@ -108,6 +112,7 @@ router.post(
       }
   
   try {
+    //Validate auth token and get the user id and show user data
     userid=req.user.id
    const user = await User.findById(userid).select("-password") 
    res.send(user)
@@ -117,4 +122,9 @@ router.post(
   res.status(500).send("Internal Server Error")
   }
 })
+
+
+
+
+
 module.exports = router;

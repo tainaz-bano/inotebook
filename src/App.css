@@ -41,3 +41,19 @@ i{
   font-size: 1.35rem;
   cursor: pointer;
 }
+body{
+  background-color: rgba(9, 10, 24, 0.973);
+}
+div{
+  color: rgb(241, 234, 234);
+}
+.card{
+  background-color: rgba(9, 10, 24, 0.603) ;
+}
+#exampleModal{
+  background-color: rgba(17, 19, 56, 0.534) ;
+}
+.modal-content{
+  background-color: rgba(10, 12, 37, 0.973) ;
+
+}
